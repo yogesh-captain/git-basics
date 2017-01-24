@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Angular JS Example</title>
+	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css" />
+	<script src="scripts/angular.js"></script>
+	<script src="scripts/angular-route.js"></script>
+	
+</head>
+<body>
+
+<div id="cont" ng-controller="WelcomeController">
+{{greeting}}
+</div>
+
+<script>
+var app = angular.module("demo", []);
+app.controller("WelcomeController", ["$scope", function(s){
+    s.greeting = "Welcome to Angular JS";
+}]);
+
+var docu = document.getElementById("cont");
+angular.bootstrap(docu, ['demo']);
+</script>
+</body>
+</html>
